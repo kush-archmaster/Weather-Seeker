@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       {{>header_links}}
+    </head>
+    <body>
+        <!--navbar-->
+        {{>navbar}}
+
+        <!--main header-->
+        <div class="container-fluid main_header">
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+                    <div class="row">
+                          <!--left side div-->
+                        <div class="col-md-12 col-12 main_header_left align-items-center">
+                            <figure>
+                              <img src="images/404.jpg" alt="kushagra" class="img-fluid">
+                            </figure>
+                            <h2>{{errorMsg}}</h2>
+                            <a href="/"><button>Go Home</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>      
+        
+        <!--footer-->
+        {{>footer}}
+    </body>
+</html>

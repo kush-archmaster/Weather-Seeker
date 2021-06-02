@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{>header_links}}
+    </head>
+    <body>
+        <!--navbar-->
+        {{>navbar}}
+
+        <!--main header-->
+        <div class="container-fluid main_header">
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+
+                    <div class="main-weather">
+                        <!--search tab-->
+                        <form class="temp-form">
+                            <input type="text" id="city" placeholder="Enter your city name" autocomplete="off">
+                            <input type="submit" value="search" id="submitBtn">
+                        </form>
+
+                        <!--output box-->
+                        <div class="temp-info">
+                            <div class="date-section">
+                                <p id="day">Tuesday</p>
+                                <p id="today_date">1 June</p>
+                            </div>
+                            <div class="weather">
+                                <p id="city-name">Get Output Here</p>
+                                <div class="temperature data_hide">
+                                    <p id="temp"><span id="temp_val">0</span>&#176;C</p>
+                                    <p id="temp_status"></i></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>      
+        
+        <!--footer-->
+       {{>footer}}
+
+       <!--js-->
+       <script src="js/main.js"></script>
+       <script>
+           const day = document.getElementById('day');
+           const today_date = document.getElementById('today_date');
+
+           const getCurrDay = () =>{
+                var weekday = new Array(7);
+                weekday[0] = "Sunday";
+                weekday[1] = "Monday";
+                weekday[2] = "Tuesday";
+                weekday[3] = "Wednesday";
+                weekday[4] = "Thursday";
+                weekday[5] = "Friday";
+                weekday[6] = "Saturday";
+
+                let currdate = new Date();
+                let day = weekday[currdate.getDay()];
+                return day;
+            };
+
+            const getCurrTime = () => {
+                var months = [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "June",
+                    "July",
+                    "Aug",
+                    "Sept",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ];
+
+                /* getting time and related info*/
+                let time = new Date();
+                let month = months[time.getMonth()];
+                let date = time.getDate();
+
+               
+                return `${date} ${month} `;
+
+            };
+             
+             day.innerHTML = getCurrDay();
+             today_date.innerHTML = getCurrTime();
+
+           
+       </script>
+    </body>
+</html>
